@@ -1,0 +1,32 @@
+.product{
+    margin: 2rem 0;
+}
+
+.product .slick-slider .slick-prev{
+    z-index: 100;
+    left: 27px;
+}
+
+.product .slick-slider .slick-next{
+    z-index: 100;
+    right: 27px;
+}
+
+.product .slick-slider button::before{
+    font-size: 2rem;
+    color: black;
+}
+
+.product .slick-slide > div {
+  margin: 0 .4rem;
+} 
+
+.product .slick-initialized .slick-slide{
+    margin-left: 0;
+}
+
+
+.home__pictures .slick-list {
+  margin: 0 -10px;
+  overflow: visible;
+}

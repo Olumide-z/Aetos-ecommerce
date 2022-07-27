@@ -1,0 +1,53 @@
+.accordion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.accordion__container{
+  max-width: 950px;
+  padding: .8rem 0;
+
+}
+
+.accordion__button-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion__content{
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5s cubic-bezier(0,1,0,1);
+  margin-top: .8rem
+}
+
+.show{
+  height: auto;
+  max-height: 9999px;
+  transition: all .5s cubic-bezier(1,0,1,0);
+}
+
+/* Style the accordion chevron icon */
+.accordion__icon {
+  font-size: 1.5rem;
+  transition: transform 0.6s ease;
+}
+
+/* Style to rotate icon when state is active */
+.rotate {
+  transform: rotate(90deg);
+}
+
+.accordion__subContent{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.accordion__subContent--items{
+  width: 30%;
+}

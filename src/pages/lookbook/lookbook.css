@@ -1,0 +1,57 @@
+.lookbook__image-grid-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lookbook__image-grid_wrapper{
+    height: 500px;
+    width: 866px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+}
+
+.lookbook__image-grid_wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 950px){
+    .lookbook__image-grid_wrapper{
+        width: 735px;
+    }
+}
+
+@media screen and (max-width: 795px){
+    .lookbook__image-grid_wrapper{
+        width: 633px;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .lookbook__image-grid_wrapper{
+        width: 527px;
+    }
+}
+
+@media screen and (max-width: 580px){
+    .lookbook__image-grid_wrapper{
+        width: 527px;
+        height: 400px;
+    }
+
+    .lookbook__image-grid_wrapper img{
+        width: 92%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .lookbook__image-grid_wrapper img{
+        width: 90%;
+    }
+}

@@ -1,0 +1,90 @@
+.review{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review__write{
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+
+    margin: 1rem 0;
+    padding: 2rem 0;
+}
+
+.review__write form{
+    width: 950px;
+}
+
+.review__write h4{
+    font-weight: 400;
+}
+
+.review__write p{
+    margin-top: 1rem;
+}
+
+.review__write label, p{
+    font-size: .9rem;
+}
+
+.review__write input{
+    padding: .4rem;
+    margin-top: 1rem;
+
+    outline: none;
+}
+
+.review__write textarea{
+    height: 100px;
+    margin-top: 1rem;
+    outline: none;
+    padding: .8rem;
+}
+
+.review__write--form-1{
+    display: flex;
+    flex-direction: column;
+}
+
+.review__write--form-2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.review__write--form-2 div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 2rem;
+}
+
+.review__write--form-2 div:first-child{
+    margin-right: 1rem;
+}
+
+.review__write--form-2 input{
+    width: 350px;
+}
+
+.review__write--btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.review__write--btn button{
+    padding: 0.5rem 4rem;
+    outline: none;
+    background-color: #666666;
+    border: none;
+    margin-top: 1rem;
+    color: white;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.review__write--btn button:hover{
+    background-color: var(--color-dark-grey);
+}

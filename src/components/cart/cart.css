@@ -1,0 +1,19 @@
+.cart{
+    padding: 1rem 1.5rem;
+}
+
+.cart__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart__title-icon{
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.cart__title-icon:hover{
+    transform: rotate(90deg);
+}
