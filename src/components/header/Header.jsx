@@ -1,5 +1,6 @@
 import "./header.css";
 import Fade  from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
         <Fade bottom>
         <h2 className="header__title-heading">Core Collection</h2>
         <p className="header__title-text">Designed for the Modern Man</p>
-        <button className="header__title-button">SHOP NOW</button>
+        <Link to='/collections'><button className="header__title-button">SHOP NOW</button></Link>
         </Fade>
       </div>
     </div>

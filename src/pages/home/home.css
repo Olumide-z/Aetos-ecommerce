@@ -142,10 +142,17 @@
     background-color: var(--color-light-bg);
     display: flex;
     margin-top: 2rem;
+    height: 100vh
 }
 
-.home__look-heading{
-    display: none;
+.home__look-image{
+    width: 50%;
+}
+
+.home__look-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 /* MEDIA QUERIES */
 
@@ -162,22 +169,17 @@
 
     .home__look{
         flex-direction: column;
+        height: 100%;
     }
 
-    .home__look-heading{
-        display: block;
-        text-align: center;
-        padding: 2rem 0;
-    }
-
-
-    .home__look-image img{
+    .home__look-image{
         width: 100%;
     }
 
-    .home__look-image-2 h6{
+    .home__look-image-2{
         display: none;
     }
+
 }
 
 @media screen and (max-width: 650px){

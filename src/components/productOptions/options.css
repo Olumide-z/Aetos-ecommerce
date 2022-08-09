@@ -1,0 +1,222 @@
+.options{
+    margin: 4.5rem 3rem;
+
+    display: flex;
+    position: relative;
+
+    gap: 5rem;
+}
+
+.options__select--colors div{
+    display: flex;
+}
+
+
+.options__images{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 50%;
+}
+
+.options__images img{
+    width: 95%;
+    object-fit: cover;
+}
+
+.options__select{
+    position: sticky;
+    width: 50%;
+}
+
+.options__select--btn-add{
+    background-color: #1f1f1f;
+    color: white;
+    width: 80%;
+    padding: 0.8rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.options__select--btns{
+    padding: 0.5rem 1rem;
+    border: 1px solid #e3e3e3;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.minus{
+    border-right: none;
+}
+
+.plus{
+    border-left: none;
+}
+
+.options__select--btn_input{
+    width: 40px;
+    padding: 0.5rem;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.container{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  margin-right: 1rem;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-top: .8rem;
+
+    margin-right: 2rem;
+}
+
+.black{
+    background-color: #000;
+}
+
+.blue{
+    background-color: #7291B4;
+}
+
+.grey{
+    background-color: #B0B2B5;
+}
+
+.white{
+    background-color: #F9F6EE;
+}
+
+/* When the radio button is checked, add a background */
+.container input:checked ~ .black {
+    background-color: white;
+    border: 1px solid #000
+}
+
+.container input:checked ~ .blue {
+    background-color: white;
+    border: 1px solid #7291B4
+}
+
+.container input:checked ~ .grey {
+    background-color: white;
+    border: 1px solid #B0B2B5
+}
+
+.container input:checked ~ .white {
+    background-color: white;
+    border: 1px solid #F9F6EE;
+}
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.checkmark:after {
+   top: 4px;
+   left: 4px;
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+}
+
+.black:after{
+    background-color: #000;
+}
+
+.blue:after{
+    background-color: #7291B4;
+}
+
+.grey:after{
+    background-color: #B0B2B5;
+}
+
+.white:after{
+    background-color: #F9F6EE;
+}
+
+.options__select--btn{
+    margin-top: 4rem;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1000px){
+    .options{
+        gap: 3rem;
+        margin: 4.5rem 2rem
+    }
+}
+
+@media screen and (max-width: 900px){
+    .options{
+        gap: 1rem;
+    }
+
+    .options__select--btn-add{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .options{
+        flex-direction: column;
+    }
+
+    .options__images{
+        flex-direction: row;
+    }
+
+    .options__select{
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    .options__select--btn-add{
+        width: 100%;
+    }
+}

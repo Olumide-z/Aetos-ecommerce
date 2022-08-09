@@ -37,12 +37,12 @@
 .footer__links{
     display: flex;
     flex-wrap: wrap;
-    font-size: .6rem;
 }
 
 .footer__links p{
     margin-right: 1.3rem;
     letter-spacing: 2px;
+    font-size: .7rem;
 }
 
 .footer__info-col-3 p{
@@ -52,6 +52,7 @@
 .footer__info-col-3_socials .icon{
     margin-right: 1rem;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .footer__info-col-4 p{
@@ -108,6 +109,7 @@
         margin-bottom: 1rem;
     }
 }
+
 
 @media screen and (max-width: 400px){
     .footer__info > div{

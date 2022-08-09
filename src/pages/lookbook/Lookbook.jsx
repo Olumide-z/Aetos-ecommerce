@@ -11,6 +11,7 @@ const Lookbook = () => {
         text="LOOKBOOK"
         big={true}
         button={true}
+        overlay={true}
       />
       <div className="lookbook__image-overlay"></div>
 

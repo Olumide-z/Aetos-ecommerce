@@ -8,7 +8,6 @@
 .accordion__container{
   max-width: 950px;
   padding: .8rem 0;
-
 }
 
 .accordion__button-wrapper{
@@ -50,4 +49,27 @@
 
 .accordion__subContent--items{
   width: 30%;
+}
+
+@media screen and (max-width: 965px){
+  .accordion__container{
+    padding: .8rem 3rem;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .accordion__container{
+    padding: .8rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 700px){
+  .accordion__subContent{
+   flex-direction: column;
+  }
+  
+  .accordion__subContent--items{
+    width: 100%;
+    margin-top: 1rem;
+  }
 }

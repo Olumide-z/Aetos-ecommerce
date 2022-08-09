@@ -6,3 +6,8 @@ export { default as Journal } from './journal/Journal';
 export { default as Shop } from './shop/Shop';
 export { default as BlogDetails } from './blogDetails/BlogDetails';
 export { default as ProductDetails } from './productDetails/ProductDetails';
+export { default as Faq } from './FAQ/Faq';
+export { default as Privacy } from './privacy-policy/Privacy';
+export { default as Refund } from './refund-policy/Refund';
+export { default as Terms } from './terms-of-service/Terms';
+

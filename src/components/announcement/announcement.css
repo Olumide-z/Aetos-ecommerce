@@ -27,3 +27,9 @@
     margin-right: 4rem;
 } 
 
+.announcement__link{
+    color: #fff;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+

@@ -59,3 +59,9 @@
 .contact__heading form button:hover{
     background-color: #000;
 }
+
+@media screen and (max-width: 650px){
+    .contact__heading form{
+        width: 80%;
+    }
+}

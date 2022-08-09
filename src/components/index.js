@@ -13,3 +13,4 @@ export { default as Product } from './product/Product';
 export { default as Cart } from './cart/Cart';
 export { default as Accordion } from './accordion/Accordion';
 export { default as Reviews } from './reviews/Reviews';
+export { default as Options } from './productOptions/Options';

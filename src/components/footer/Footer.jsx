@@ -50,12 +50,12 @@ const Footer = () => {
       </div>
 
       <div className="footer__links">
-        <Link className='link' to='/'><p>&copy;AETOS APPAREL 2022</p></Link>
-        <Link className='link' to='/'><p>OUR STORY</p></Link>
-        <Link className='link' to='/'><p>FAQ</p></Link>
-        <Link className='link' to='/'><p>REFUND POLICY</p></Link>
-        <Link className='link' to='/'><p>TERMS OF SERVICE</p></Link>
-        <Link className='link' to='/'><p>PRIVACY POLICY</p></Link>
+        <Link className='link' to='/'><p>&copy;OLUMIDE ILESANMI 2022</p></Link>
+        <Link className='link' to='/collections'><p>OUR STORY</p></Link>
+        <Link className='link' to='/faqs'><p>FAQ</p></Link>
+        <Link className='link' to='/policies/refund-policy'><p>REFUND POLICY</p></Link>
+        <Link className='link' to='/policies/terms-of-service'><p>TERMS OF SERVICE</p></Link>
+        <Link className='link' to='/policies/privacy-policy'><p>PRIVACY POLICY</p></Link>
       </div>
 
     </div>

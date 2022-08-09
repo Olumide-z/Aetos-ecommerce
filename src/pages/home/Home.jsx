@@ -1,5 +1,7 @@
 import { Header, Newsletter, Product } from "../../components";
 import "./home.css";
+import { Link } from "react-router-dom";
+
 import Fade from "react-reveal/Fade";
 import Pulse from "react-reveal/Pulse";
 import Slider from "react-slick";
@@ -62,14 +64,14 @@ const Home = () => {
           <img src="/images/henley.webp" alt="henley" />
           <div className="home__collection-image-text">
             <h2>Henleys</h2>
-            <button>SHOP NOW</button>
+            <Link to='/collections'><button>SHOP NOW</button></Link>
           </div>
         </div>
         <div className="home__collection-image image2">
           <img src="/images/t-shirt.webp" alt="shirt" />
           <div className="home__collection-image-text">
             <h2>T-Shirts</h2>
-            <button>SHOP NOW</button>
+            <Link to='/collections'><button>SHOP NOW</button></Link>
           </div>
         </div>
       </div>
@@ -119,13 +121,11 @@ const Home = () => {
       </div>
 
       <div className="home__look">
-        <h6 className="home__look-heading">SHOP THE LOOK</h6>
         <div className="home__look-image">
           <img src="/images/double.webp" alt="double" />
         </div>
-        <div className="home__look-image-2">
-          <h6>SHOP THE LOOK</h6>
-          <p>hi</p>
+        <div className="home__look-image home__look-image-2">
+          <img src="/images/Facetune.webp" alt="double" />
         </div>
       </div>
 

@@ -88,3 +88,54 @@
 .review__write--btn button:hover{
     background-color: var(--color-dark-grey);
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 965px){
+    .review__container{
+        /* background: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 965px;
+    }
+
+    .review__write form{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 725px){
+    .review{
+        width: 90%;
+    }
+    .review__write{
+        width: 100%;
+    }
+
+    .review__write--form-2 input{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 465px){
+    .review__write{
+        width: 95%;
+    }
+
+    .review__write--form-2 input{
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 415px){
+    .review__write--form-2 input{
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 373px){
+    .review__write--form-2 input{
+        width: 120px;
+    }
+}
