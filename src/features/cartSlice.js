@@ -9,6 +9,7 @@ const initialState = {
   subTotal: 0,
 };
 
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -20,22 +21,24 @@ const cartSlice = createSlice({
       state.cartOpen = false;
     },
     addToCart: (state, action) => {
-      state.cartItems = [...state.cartItems, { ...action.payload, qty: 1 }];
+      state.cartItems = [...state.cartItems, { ...action.payload }];
     },
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter(
-        (item) => item.id !== action.payload
+        (item) => (
+          !(item.productId === action.payload.productId && item.variantId === action.payload.variantId)
+        )
       );
     },
     increase: (state, action) => {
       const cartItem = state.cartItems.find(
-        (item) => item.id === action.payload
+        (item) => item.productId === action.payload.productId && item.variantId === action.payload.variantId
       );
       cartItem.amount = cartItem.amount + 1;
     },
     decrease: (state, action) => {
       const cartItem = state.cartItems.find(
-        (item) => item.id === action.payload
+        (item) => item.productId === action.payload.productId && item.variantId === action.payload.variantId
       );
       cartItem.amount = cartItem.amount - 1;
     },
@@ -50,7 +53,10 @@ const cartSlice = createSlice({
       state.subTotal = subTotal;
     },
   },
+  
 });
+
+
 
 export const {
   openCart,

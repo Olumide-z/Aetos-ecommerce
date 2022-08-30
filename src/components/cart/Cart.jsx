@@ -6,16 +6,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeCart, removeFromCart, increase, decrease } from "../../features/cartSlice";
 import { useEffect } from "react";
 
+import { data } from "../productCard/data";
+import { useState } from "react";
+
 
 const Cart = () => {
   const { cartItems, subTotal } = useSelector((store) => store.cart);
-  const { photo } = useSelector((store) => store.color);
+
+  console.log(cartItems);
+
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     localStorage.setItem('cartData', JSON.stringify(cartItems))
   }, [cartItems])
+
+  console.log("cartItem", cartItems)
 
   return (
     <div className="cart">
@@ -31,56 +38,56 @@ const Cart = () => {
       {cartItems.length > 0 ? (
       <>
       <div className="cart__items-container">
-        {cartItems.map((item) => (
-          <div className="cart__items-wrap">
+        {cartItems.map((item) => {
+          const product = data.find((product) => product.id === item.productId);
+          const variant = product.variants?.find((variant) => variant.id === item.variantId);
+
+          console.log("item", item, "variant", variant, "product", product)
+          console.log(cartItems)
+           return product && variant &&(
+            <div className="cart__items-wrap">
             <div className="cart__items">
 
               <div className="cart__items--image">
                 <img
                   src={`${
-                    photo === "black"
-                      ? item.blackImage1
-                      : photo === "grey"
-                      ? item.greyImage1
-                      : photo === "white"
-                      ? item.whiteImage1
-                      : photo === "blue"
-                      ? item.blueImage1
-                      : item.image1
+                   variant?.image1
                   }`}
-                  alt={item.title}
+                  alt={product.title}
                 />
               </div>
 
               <div className="cart__items--info">
-                <h3>{item.title}</h3>
+                <h3>{product.title}</h3>
                 <p>Size:</p>
                 <p>Color:</p>
-                <h5>${item.price}.00</h5>
+                <h5>${product.price}.00</h5>
                 <div className="cart__items--info-btns">
                   <button
                     onClick={() => {
                       if(item.amount === 1){
-                        dispatch(removeFromCart(item.id))
+                        dispatch(removeFromCart(item))
                       }else{
-                        dispatch(decrease(item.id))
+                        dispatch(decrease({productId: item.productId, variantId: item.variantId}))
                       }
                     }}
                   ><AiOutlineMinus /></button>
                   <span>{item.amount}</span>
                   <button
-                    onClick={() => dispatch(increase(item.id))}
+                    onClick={() => dispatch(increase({productId: item.productId, variantId: item.variantId}))}
                   ><AiOutlinePlus /></button>
                 </div>
               </div>
 
-              <div className="cart__items--remove" onClick={() => dispatch(removeFromCart(item.id))}>
+              <div className="cart__items--remove" onClick={() => dispatch(removeFromCart(item))}>
                 <p><MdOutlineClose /></p>
               </div>
 
             </div>
           </div>
-        ))}
+           ) 
+        })}
+          
       </div>
 
       <div className="cart__footer">

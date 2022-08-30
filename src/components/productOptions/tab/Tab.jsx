@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import './tab.css';
 
-const Tab = ({options}) => {
+const Tab = ({singleProduct}) => {
   const [toggleTab, setToggletab] = useState(1);
 
   const handleToggle = (index) => {
@@ -37,12 +37,12 @@ const Tab = ({options}) => {
           <div
             className={toggleTab === 1 ? "content  active-content" : "content"}
           >
-            {options && <p>{options.desc}</p>}
+            {singleProduct && <p>{singleProduct.desc}</p>}
           </div>
           <div
             className={toggleTab === 2 ? "content  active-content" : "content"}
           >
-            {options && options.material.map((item) => (
+            {singleProduct && singleProduct.material.map((item) => (
               <ul key={item.id}>
                 <li>{item.item}</li>
               </ul>
@@ -51,7 +51,7 @@ const Tab = ({options}) => {
           <div
             className={toggleTab === 3 ? "content  active-content" : "content"}
           >
-            {options && <p>{options.size}</p>}
+            {singleProduct && <p>{singleProduct.size}</p>}
           </div>
         </div>
       </div>

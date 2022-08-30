@@ -8,12 +8,13 @@ const ProductDetails = () => {
   const [productData, setProductData] = useState(data);
   const { id } = useParams();
 
-  const options = productData.find((option) => option.id.toString() === id );
+  const singleProduct = productData.find((option) => option.id.toString() === id );
+  console.log(singleProduct)
   
   return (
     <div className="product-details">
       {
-        options && <Options options={options}/>
+        singleProduct && <Options singleProduct={singleProduct}/>
       }
       <Accordion />
       <Reviews />
