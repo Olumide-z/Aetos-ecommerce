@@ -1,6 +1,7 @@
 .cart{
    border-left: 1px solid #e3e3e3;
    height: 100vh;
+   overflow: auto;
 }
 
 .cart__title{
@@ -19,7 +20,8 @@
 
 .cart__items-container{
     z-index: -1;
-    overflow-y: auto;
+    min-height: fit-content;
+    margin-bottom: 200px;
 }
 
 .cart__title-icon{
@@ -75,6 +77,10 @@
 
 .cart__items--info{
     width: 40%;
+}
+
+.cart__items-color{
+    text-transform: capitalize;
 }
 
 .cart__items--info-btns{
@@ -158,4 +164,10 @@
     align-items: center;
     color: var(--color-grey);
     font-weight: 600;
+}
+
+@media screen and (max-width: 380px){
+    .cart__footer, .cart__title, .cart{
+        width: 100vw;
+    }
 }

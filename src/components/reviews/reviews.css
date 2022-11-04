@@ -89,6 +89,18 @@
     background-color: var(--color-dark-grey);
 }
 
+.review__container{
+    display: flex;
+    flex-direction: column;
+}
+
+.review__details{
+    margin: 0 auto;
+    max-width: 70%;
+    padding-bottom: 1rem;
+}
+
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 965px){

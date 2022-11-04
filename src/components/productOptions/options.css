@@ -25,7 +25,6 @@
 }
 
 .options__select{
-    position: sticky;
     width: 50%;
 }
 
@@ -182,7 +181,6 @@
     margin-top: 4rem;
 }
 
-
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1000px){
@@ -218,5 +216,11 @@
 
     .options__select--btn-add{
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .options{
+        margin: 4.5rem 1rem;
     }
 }

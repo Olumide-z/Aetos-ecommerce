@@ -12,14 +12,15 @@ import { useState } from "react";
 
 const Cart = () => {
   const { cartItems, subTotal } = useSelector((store) => store.cart);
+  const { size } = useSelector((store) => store.color)
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    localStorage.setItem('cartData', JSON.stringify(cartItems))
+    localStorage.setItem('userCartData', JSON.stringify(cartItems))
   }, [cartItems])
 
   console.log("cartItem", cartItems)
@@ -35,7 +36,7 @@ const Cart = () => {
         />
       </div>
 
-      {cartItems.length > 0 ? (
+      {cartItems?.length > 0 ? (
       <>
       <div className="cart__items-container">
         {cartItems.map((item) => {
@@ -43,7 +44,7 @@ const Cart = () => {
           const variant = product.variants?.find((variant) => variant.id === item.variantId);
 
           console.log("item", item, "variant", variant, "product", product)
-          console.log(cartItems)
+          // console.log(cartItems)
            return product && variant &&(
             <div className="cart__items-wrap">
             <div className="cart__items">
@@ -59,8 +60,8 @@ const Cart = () => {
 
               <div className="cart__items--info">
                 <h3>{product.title}</h3>
-                <p>Size:</p>
-                <p>Color:</p>
+                <p>Size: {size}</p>
+                <p className="cart__items-color">Color: {variant.color}</p>
                 <h5>${product.price}.00</h5>
                 <div className="cart__items--info-btns">
                   <button

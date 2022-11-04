@@ -12,7 +12,7 @@ const Options = ({ singleProduct }) => {
   const dispatch = useDispatch();
 
   const variant = singleProduct.variants.find((variant) => variant.color === color)
-  // console.log(singleProduct);
+  // console.log('singleProduct', singleProduct);
 
   return (
     <div className="options">
@@ -35,10 +35,15 @@ const Options = ({ singleProduct }) => {
         <h2>{singleProduct.title}</h2>
         <p>${singleProduct.price}.00</p>
 
-        <div className="options__select--sizes">
+        {/* <div className="options__select--sizes">
           <p>Size</p>
-          <div className="options__select--sizes-options"></div>
-        </div>
+          <div className="options__select--sizes-options">
+            <button>Small</button>
+            <button>Medium</button>
+            <button>Large</button>
+            <button onClick={() => dispatch(changeSize('XL'))}>Extra Large</button>
+          </div>
+        </div> */}
 
         <div className="options__select--colors">
           <p>Color</p>

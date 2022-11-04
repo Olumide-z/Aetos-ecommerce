@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    photo: ''
+    photo: '',
 }
 
 const colorSlice = createSlice({
@@ -10,7 +10,7 @@ const colorSlice = createSlice({
     reducers: {
         changeColor: (state, action) => {
             state.photo = action.payload
-        }
+        },
     }
 });
 

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { openCart } from "../../features/cartSlice";
 
 import {
-  FaSearch,
   FaInstagram,
   FaFacebookSquare,
   FaYoutube,
@@ -14,24 +13,6 @@ import { BsCartFill } from "react-icons/bs";
 import Cart from "../cart/Cart";
 import { useDispatch, useSelector } from "react-redux";
 import { useRef } from "react";
-
-let useClickOutside = (handler) => {
-  let domNode = useRef();
-
-  useEffect(() => {
-    let maybeHandler =  (e) => {
-      if(!domNode.current?.contains(e.target)){
-        handler();
-      }
-    }
-    document.addEventListener('mousedown', maybeHandler);
-
-    return() => {
-      document.removeEventListener('mousedown', maybeHandler)
-    }
-  }, [])
-
-}
 
 
 const Menu = () => {
@@ -63,13 +44,25 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleClick = () => setToggleMenu(!toggleMenu);
 
-  let domNode = useClickOutside(() => {
-    setToggleMenu(false)
-  })
+  let menuRef = useRef();
+
+  useEffect(() => {
+    let handler = (e) => {
+      if(!menuRef.current.contains(e.target)){
+        setToggleMenu(false)
+      }
+    };
+    document.addEventListener('mousedown', handler);
+  
+    return() => {
+      document.removeEventListener('mousedown', handler);
+    }
+  }, []);
+  
 
   return (
     <div className="navbar">
-      <div className="navbar__nav" ref={domNode}>
+      <div className="navbar__nav">
 
         <div className="navbar__menubar">
           <div className="navbar__menubar-icons" onClick={handleClick}>
@@ -77,7 +70,6 @@ const Navbar = () => {
             <div className={toggleMenu && "line2"}></div>
             <div className={toggleMenu && "line3"}></div>
           </div>
-          <FaSearch className="icons" />
         </div>
 
         <div className="navbar__logo">
@@ -91,7 +83,6 @@ const Navbar = () => {
         </div>
 
         <div className="navbar__icons">
-          <FaSearch className="icons search" />
           <div className="navbar__icons--cart" onClick={() => dispatch(openCart())}>
             <BsCartFill className="icons cartIcon"/>
             {itemsNumber > 0 ? <p>{itemsNumber}</p> : null}
@@ -105,7 +96,7 @@ const Navbar = () => {
           </div>
       </div>
 
-      <div className={toggleMenu ? "navbar__menu active" : "navbar__menu"}>
+      <div className={toggleMenu ? "navbar__menu active" : "navbar__menu"} ref={menuRef}>
         <div className="navbar__menu-links">
           <Link to="/" className="navbar__link">
             <p>Home</p>
